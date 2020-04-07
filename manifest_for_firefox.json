@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "PP Interrupter Lite",
+  "version": "0.2.1",
+
+  "description": "Interrupts web-navigation to specified urls in order to Protect Privacy.",
+
+  "icons": {
+    "48": "icons/pp-red_48.png"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "{972be2a0-5d5c-4368-8122-7915cca63e19}"
+    }
+  },
+
+  "permissions": [
+    "<all_urls>",
+    "storage",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+
+  "background": {
+    "scripts": ["consts_for_firefox.js", "consts.js", "background.js"]
+  },
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "page_action": {
+    "browser_style": true,
+    "default_icon": "icons/pp-red_32.png",
+    "default_title": "PP Interrupter Lite"
+  }
+}
