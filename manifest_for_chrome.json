@@ -1,9 +1,11 @@
 {
   "manifest_version": 2,
   "name": "PP Interrupter Lite",
-  "version": "0.2.1",
+  "version": "0.3",
 
   "description": "Interrupts web-navigation to specified urls in order to Protect Privacy.",
+
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAieShHlVuSVKKpRwpypKG9b4iDbGGIx14nx7wwhFh1Y0vh2m3kJqov5K3hS6ROvC4o9BNA4zQLzg+mKe+T8mr8DDivHlUgdsaJTSSbZdA3ipsPo6wNMv76T11VEmqoZ7GeRsm23VSfvyUZSLnd8zwS6Iygd7EH75zqDTRwyD52Y7ntfnY4ivXB9OKitA89RKWClJ17KjDYHRw+3UrRlAZHnW3kFtFVTrot5wU4LnHTdh+KI23+yB4OYphyojZQ1O3Afb+c3/Vdez1d1tBtB5KPSLufqQj2GkP5iRsRYQgzVrZnT4cwx/lZw4GuEoCNhDzhOVeieW0DVDRV81FzqzcawIDAQAB",
 
   "icons": {
     "48": "icons/pp-red_48.png"

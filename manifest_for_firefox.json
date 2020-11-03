@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "PP Interrupter Lite",
-  "version": "0.2.1",
+  "version": "0.3",
 
   "description": "Interrupts web-navigation to specified urls in order to Protect Privacy.",
 

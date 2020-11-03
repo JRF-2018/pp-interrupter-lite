@@ -1,14 +1,13 @@
 /*
  * background.js of pp-interrupter
  *
- * Time-stamp: <2017-12-27T08:28:15Z>
+ * Time-stamp: <2020-11-03T05:18:46Z>
  */
 //console.log("background.js: ok");
 
 var tabData = {};
 var settings;
-var notificationShown = false;
-const notificationId = "pp-interrupter-lite-notification";
+//const notificationId = "pp-interrupter-lite-notification";
 const myStorage = ('sync' in chrome.storage)?
   chrome.storage.sync : chrome.storage.local;
 
@@ -85,7 +84,8 @@ function blockRequest (details) {
     if (details.url == url
 	  || (details.url.length > url.length && 
 	      details.url.substr(0, url.length) == url
-	      && details.url.substr(url.length, 1).match(/[\?\&\/]/))) {
+	      && (url.match(/[\/]$/)
+		  || details.url.substr(url.length, 1).match(/[\?\&\/]/)))) {
       a = settings.authorities[i];
       break;
     }
@@ -96,7 +96,8 @@ function blockRequest (details) {
     if (link == a.url
 	  || (link.length > a.url.length && 
 	      link.substr(0, a.url.length) == a.url
-	      && link.substr(a.url.length, 1).match(/[\?\&\/]/))) {
+	      && (a.url.match(/[\/]$/)
+		  || link.substr(a.url.length, 1).match(/[\?\&\/]/)))) {
       return {cancel: false};
     }
   }
@@ -180,10 +181,22 @@ function handleMessage (req, sender, sendResponse) {
 }
 
 function handleShowIcon (req, sender, sendResponse) {
+//  if ('setTitle' in chrome.pageAction) {
+//    chrome.pageAction.setTitle({
+//      tabId: sender.tab.id,
+//      title: "PP Interrupter Lite: " + req.name
+//    });
+//  }
   chrome.pageAction.show(sender.tab.id);
 }
 
 function handleHideIcon (req, sender, sendResponse) {
+//  if ('setTitle' in chrome.pageAction) {
+//    chrome.pageAction.setTitle({
+//      tabId: sender.tab.id,
+//      title: "PP Interrupter Lite"
+//    });
+//  }
   chrome.pageAction.hide(sender.tab.id);
 }
 
